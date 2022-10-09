@@ -6,6 +6,9 @@ export const get = async (route, host = 'https://api.estuary.tech'): Promise<any
   try {
     const token = Cookies.get(C.auth);
 
+    console.log('debugtest');
+    console.log("DEBUG", Cookies.get(C.auth));
+
     let r = await fetch(`${host}${route}`, {
       method: 'GET',
       headers: {
@@ -39,6 +42,9 @@ export const get = async (route, host = 'https://api.estuary.tech'): Promise<any
 export const post = async (route, payload, host = 'https://api.estuary.tech'): Promise<any> => {
   try {
     const token = Cookies.get(C.auth);
+
+    console.log('debugtest');
+    console.log("DEBUG", Cookies.get(C.auth));
 
     let r = await fetch(`${host}${route}`, {
       method: 'POST',
@@ -75,6 +81,9 @@ export const put = async (route, payload, host = 'https://api.estuary.tech'): Pr
   try {
     const token = Cookies.get(C.auth);
 
+    console.log('debugtest');
+    console.log("DEBUG", Cookies.get(C.auth));
+
     let r = await fetch(`${host}${route}`, {
       method: 'PUT',
       body: JSON.stringify(payload),
@@ -110,6 +119,8 @@ export const del = async (route: string, payload?: object, host = 'https://api.e
   try {
     const token = Cookies.get(C.auth);
 
+    console.log('debugtest');
+    
     let r = await fetch(`${host}${route}`, {
       method: 'DELETE',
       body: JSON.stringify(payload),

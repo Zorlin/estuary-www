@@ -114,6 +114,7 @@ export const getViewerFromFission = async ({ fs, path }) => {
 export const getViewerFromToken = async (token) => {
   try {
     const url = `${C.api.host}/viewer`;
+    console.log(token);
     const response = await fetch(url, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -140,6 +141,8 @@ export const getViewerFromToken = async (token) => {
 export const getViewerFromHeader = async (headers) => {
   try {
     const token = Cookies.get(headers, C.auth);
+    console.log('getViewerFromHeader')
+    console.log(headers, C.auth);
     const url = `${C.api.host}/viewer`;
     const response = await fetch(url, {
       headers: {
